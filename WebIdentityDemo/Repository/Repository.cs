@@ -11,7 +11,7 @@ using System.Linq;
 using System.ServiceModel;
 using System.Threading.Tasks;
 
-namespace IdentityDemo.Repository
+namespace WebIdentityDemo.Repository
 {
     public class Repository : IRepository
     {

@@ -5,7 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 //using WebServiceSoapDemo;
 
-namespace IdentityDemo.Repository
+namespace WebIdentityDemo.Repository
 {
    public interface IRepository
     {

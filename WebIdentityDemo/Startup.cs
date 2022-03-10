@@ -1,4 +1,4 @@
-using IdentityDemo.Repository;
+using WebIdentityDemo.Repository;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -11,7 +11,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace IdentityDemo
+namespace WebIdentityDemo
 {
     public class Startup
     {

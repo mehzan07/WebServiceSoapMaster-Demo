@@ -1,12 +1,12 @@
 ﻿using WebIdentityDemo.Models;
-using IdentityDemo.Repository;
+using WebIdentityDemo.Repository;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
 using System.Threading.Tasks;
 
-namespace IdentityDemo.Controllers
+namespace WebIdentityDemo.Controllers
 {
     public class AuthController : Controller
     {
