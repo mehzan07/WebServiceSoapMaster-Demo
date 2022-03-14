@@ -2,7 +2,7 @@
 using WebIdentityDemo.Models;
 using Microsoft.Extensions.Configuration;
 using Newtonsoft.Json;
-//using WebServiceSoapDemo;
+using WebServiceSoapDemo;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -35,23 +35,28 @@ namespace WebIdentityDemo.Repository
             basicHttpBinding.SendTimeout = TimeSpan.MaxValue;
         }
 
-        //public async Task<SoapDemoSoapClient> GetInstanceAsync()
-        //{
-        //    return await Task.Run(() => new SoapDemoSoapClient(basicHttpBinding, endpointAddress));
-        //}
+        public async Task<WebServiceSoapDemoSoapClient> GetInstanceAsync()
+        {
+            return await Task.Run(() => new WebServiceSoapDemoSoapClient(basicHttpBinding, endpointAddress));
+        }
 
         public async Task<Response<IdentityModel>> LoginAsync(LoginViewModel loginView)
         {
             Response<IdentityModel> response = new Response<IdentityModel>();
             IdentityModel userModel = new IdentityModel();
 
+
             try
             {
-                //var client = await GetInstanceAsync();
-                //var result = await client.loginAsync(loginView.Email, loginView.Password);
+                var client = await GetInstanceAsync();
+               
+                 //var result = await client.login(loginView.Email, loginView.Password);
+                var result = await client.loginAsync(loginView.Email, loginView.Password);
+                //var result = await client.login(loginView.Email, loginView.Password);
+
 
                 DataTable dt = new DataTable();
-              //  dt = JsonConvert.DeserializeObject<DataTable>(result.Body.loginResult.Data);
+               dt = JsonConvert.DeserializeObject<DataTable>(result.Body.loginResult.Data);
 
                 IdentityModel user = new IdentityModel();
                 user.ID = int.Parse(dt.Rows[0]["ID"].ToString());
@@ -60,8 +65,8 @@ namespace WebIdentityDemo.Repository
                 user.Reg_Date = dt.Rows[0]["Reg_Date"].ToString();
 
                 response.Data = user;
-               // response.message = (result.Body.loginResult.resultCode == 500) ? "Login failed.Please check Username and / or password" : "data found";
-                //response.code = result.Body.loginResult.resultCode;
+               response.message = (result.Body.loginResult.resultCode == 500) ? "Login failed.Please check Username and / or password" : "data found";
+                response.code = result.Body.loginResult.resultCode;
             }
             catch (Exception ex)
             {

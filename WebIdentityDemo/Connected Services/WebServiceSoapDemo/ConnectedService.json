@@ -1,0 +1,17 @@
+{
+  "ExtendedData": {
+    "inputs": [
+      "https://localhost:44399/WebServiceSoapDemo.asmx"
+    ],
+    "collectionTypes": [
+      "System.Array",
+      "System.Collections.Generic.Dictionary`2"
+    ],
+    "messageContract": true,
+    "namespaceMappings": [
+      "*, WebServiceSoapDemo"
+    ],
+    "targetFramework": "net5.0",
+    "typeReuseMode": "None"
+  }
+}
