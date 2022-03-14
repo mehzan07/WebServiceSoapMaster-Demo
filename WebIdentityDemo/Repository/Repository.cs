@@ -68,26 +68,6 @@ namespace WebIdentityDemo.Repository
                 response.code = 500;
                 response.message = ex.Message;
             }
-
-
-            //var sp_params = new DynamicParameters();
-            //sp_params.Add("email",loginView.Email,DbType.String);
-            //sp_params.Add("password", loginView.Password, DbType.String);
-
-            //try
-            //{
-            //    using IDbConnection dbConnection = new SqlConnection(_configuration.GetConnectionString("default"));
-
-            //    response.Data = await dbConnection.QueryFirstOrDefaultAsync<IdentityModel>("sp_loginUser", sp_params, commandType: CommandType.StoredProcedure);
-            //    response.message = (response.Data is null) ? "Login failed.Please check Username and / or password" : "data found";
-            //    response.code = (response.Data is null) ? 500 : 200;
-            //}
-            //catch (Exception ex)
-            //{
-            //    response.code = 500;
-            //    response.message = ex.Message;
-            //}
-
             return response;
         }
 
