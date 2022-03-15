@@ -13,7 +13,7 @@ using WebServiceSoapDemo.Models;
 namespace WebServiceSoapDemo
 {
     /// <summary>
-    /// Summary description for SoapDemo
+    /// Summary description for WebServiceSoapDemo
     /// </summary>
     [WebService(Namespace = "http://tempuri.org/")]
     [WebServiceBinding(ConformsTo = WsiProfiles.BasicProfile1_1)]
@@ -35,10 +35,11 @@ namespace WebServiceSoapDemo
         public  ResponseModel<string> login(string email, string password)
         {
             ResponseModel<string> response = new ResponseModel<string>();
+            
 
-            if (email != null)
+                if (email != null)
             {
-                using (SqlConnection conn = new SqlConnection(@"Server=CND7496N83\SQLEXPRESS;Database=IdentityDemo;User Id=Sahand;Password=Sahand01;"))
+                using (SqlConnection conn = new SqlConnection(@"Server=CND7496N83\SQLEXPRESS;Database=WebIdentityDemo;User Id=Sahand;Password=Sahand01;"))
                 {
                     SqlCommand cmd = new SqlCommand("sp_loginUser",conn);
                     cmd.CommandType = CommandType.StoredProcedure;

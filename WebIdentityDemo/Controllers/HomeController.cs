@@ -9,7 +9,7 @@ using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
 
-namespace IdentityDemo.Controllers
+namespace WebIdentityDemoIdentityDemo.Controllers
 {
    
     public class HomeController : Controller

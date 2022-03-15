@@ -16,7 +16,7 @@ namespace WebIdentityDemo.Repository
     public class Repository : IRepository
     {
         private readonly IConfiguration _configuration;
-        public readonly string serviceUrl = "https://localhost:44399/SoapDemo.asmx";
+        public readonly string serviceUrl = "https://localhost:44399/WebServiceSoapDemo.asmx";
         public readonly EndpointAddress endpointAddress;
         public readonly BasicHttpBinding basicHttpBinding;
         public Repository(IConfiguration configuration)
@@ -49,11 +49,11 @@ namespace WebIdentityDemo.Repository
             try
             {
                 var client = await GetInstanceAsync();
+                
                
-                 //var result = await client.login(loginView.Email, loginView.Password);
+                
                 var result = await client.loginAsync(loginView.Email, loginView.Password);
-                //var result = await client.login(loginView.Email, loginView.Password);
-
+               
 
                 DataTable dt = new DataTable();
                dt = JsonConvert.DeserializeObject<DataTable>(result.Body.loginResult.Data);
