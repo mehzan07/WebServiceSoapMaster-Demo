@@ -7,3 +7,4 @@ look to description in this link:
 Visit this link for the tutorials https://www.softsolutionsahand.com/home/how-to-create-web-service/
 ASP.net Core consumes the Web Service.
 look to the link: https://softsolutionsahand.com/how-to-consume-webservice/
+
