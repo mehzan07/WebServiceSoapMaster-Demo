@@ -6,7 +6,7 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
-
+using Newtonsoft.Json;
 namespace WebServiceSoapDemo
 {
     using System.Runtime.Serialization;
@@ -336,17 +336,15 @@ namespace WebServiceSoapDemo
             WebServiceSoapDemoSoap12,
         }
 
-        //added manually
         public System.Threading.Tasks.Task<WebServiceSoapDemo.loginResponse> loginAsync(string email, string password)
         {
             WebServiceSoapDemo.loginRequest inValue = new WebServiceSoapDemo.loginRequest();
-            // meza: here shall be exception why
-            inValue.Body = new WebServiceSoapDemo.loginRequestBody();
+
+            inValue.Body =  new WebServiceSoapDemo.loginRequestBody();
             inValue.Body.email = email;
             inValue.Body.password = password;
-            return ((WebServiceSoapDemo.WebServiceSoapDemoSoap)(this)).loginAsync(inValue);
-
-
+             return ((WebServiceSoapDemo.WebServiceSoapDemoSoap)(this)).loginAsync(inValue);
         }
+
     }
 }
