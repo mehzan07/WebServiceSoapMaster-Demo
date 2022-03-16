@@ -51,7 +51,7 @@ namespace WebIdentityDemo.Repository
                 var client = await GetInstanceAsync();
                 
                
-                
+                // here result is null and happens
                 var result = await client.loginAsync(loginView.Email, loginView.Password);
                
 
